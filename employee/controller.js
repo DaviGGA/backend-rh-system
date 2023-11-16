@@ -13,3 +13,9 @@ module.exports.createEmployee = async (req ,res) => {
 
     res.status(200).send({message: "Funcionário criado com sucesso",  id: employeeId[0]});
 }
+
+module.exports.getAllEmployee = async (req, res) => {
+    const employees = await service.getAllEmployee();
+    
+    res.status(200).send(employees);
+}
