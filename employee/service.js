@@ -1,8 +1,8 @@
 const knex = require('../connection/db');
 
 
-module.exports.createEmployee = async ({name, role, sector, wage}) => {
-    const employee = knex('employee').insert({name,role,sector,wage},['id','name']);
+module.exports.createEmployee = async ({name,cpf, role, sector, wage}) => {
+    const employee = knex('employee').insert({name,cpf,role,sector,wage});
     return employee;
 }
 
