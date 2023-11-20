@@ -20,9 +20,21 @@ let createPoint = knex.schema.createTable('point', table => {
     table.foreign('employee_id').references('employee.id');
 })
 
+let createUser = knex.schema.createTable('user', table => {
+    table.increments();
+    table.string('username');
+    table.string('password');
+})
+
+let createMessage = knex.schema.createTable('chat', table => {
+    table.increments();
+    table.string('message');
+    table.integer('user_id').unsigned().notNullable();
+    table.foreign('user_id').references('user.id');
+})
 
 function createDatabase() {
-    Promise.all([createEmployee, createPoint]).then(() => {
+    Promise.all([createEmployee, createPoint, createUser, createMessage]).then(() => {
         console.log("Tabelas criadas");
     })
 }
