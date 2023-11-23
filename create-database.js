@@ -26,9 +26,9 @@ let createUser = knex.schema.createTable('user', table => {
     table.string('password');
 })
 
-let createMessage = knex.schema.createTable('chat', table => {
+let createMessage = knex.schema.createTable('message', table => {
     table.increments();
-    table.string('message');
+    table.string('content');
     table.integer('user_id').unsigned().notNullable();
     table.foreign('user_id').references('user.id');
 })
