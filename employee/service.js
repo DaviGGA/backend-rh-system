@@ -10,3 +10,4 @@ module.exports.getAllEmployee = async () => {
     const employees = knex.select('*').from('employee');
     return employees;
 }
+

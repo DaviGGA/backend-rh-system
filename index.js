@@ -1,9 +1,12 @@
 const express = require('express');
+require('express-async-errors');
+
 const app = express();
 const employeeRouter = require('./employee/router');
 const pointRouter = require('./point/router');
 const userRouter = require('./user/router');
 const messageRouter = require('./message/router');
+
 const cors = require('cors');
 
 app.use(express.json());
