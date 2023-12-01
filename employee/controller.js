@@ -43,7 +43,7 @@ module.exports.getPercentWagePerSector = async (req, res) => {
         wagePerSector.push(percentSector);
     }
 
-    res.status(200).send({wagePerSector})
+    res.status(200).send(wagePerSector)
     
 }
 

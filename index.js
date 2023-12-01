@@ -19,8 +19,8 @@ app.use(
 )
 
 app.use('/employee', employeeRouter);
-app.use('/point',pointRouter);
-app.use('/user',userRouter);
+app.use('/point', pointRouter);
+app.use('/user', userRouter);
 app.use('/message', messageRouter);
 
 module.exports = app;
